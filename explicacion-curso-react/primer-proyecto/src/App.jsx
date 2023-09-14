@@ -12,10 +12,6 @@ const Item = ({nombre, visto}) => {
 
 export const App = (props) => {
 
-  const addTask = () => {
-    setArreglo([...arreglo, { nombre: 'nuevo', visto: false}])
-  }
-
   let listadoSecciones = [
       {id: 0, nombre: 'ejemplo 1', visto: true},
       {id: 1, nombre: 'ejemplo 2', visto: true},
@@ -32,7 +28,7 @@ export const App = (props) => {
     let valor = val.trim();
     if(valor < 1) return //si se cumple se sale del metodo
     const envio = {
-      id: arreglo.length,
+        id: arreglo.length,
         nombre: valor,
         visto: false 
     }
@@ -47,8 +43,6 @@ export const App = (props) => {
       <ol>
         {arreglo.map(item => <Item key={item.id} nombre={item.nombre} visto={item.visto}></Item>)}
       </ol>
-
-     
     </>
   )
 }
